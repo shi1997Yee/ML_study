@@ -1,0 +1,18 @@
+# conda
+查看conda环境
+conda env list
+创建虚拟环境
+conda create --name yolov8 python=3.8
+切换环境
+conda activate yolov8
+退出环境
+conda deactivate yolov8
+
+移除环境
+conda remove -n yolov8 --all
+
+输入 conda list 可以查看当前环境中所有安装过的程序
+输入pip list 可以查看当前环境中所有python的模块
+
+清华镜像
+pip install -U ultralytics -i https://pypi.tuna.tsinghua.edu.cn/simple
