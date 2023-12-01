@@ -19,7 +19,7 @@ def angle_func1(point, angle, length):
 
 def angle_func2(point1, point2):
     """
-    获取两点所构成的有向边的角度(以正东为基准的顺时针角度)
+    获取两点所构成的有向边的角度(以正东为基准的顺时针角度)，[-180, 180]
     example: angle_func2(Point(1,1), Point(2,2))
     """
     x1, y1 = point1.x, point1.y
