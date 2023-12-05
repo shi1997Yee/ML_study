@@ -12,3 +12,6 @@ https://blog.csdn.net/spatial_coder/article/details/127836835
 
 2.2 宽窄依赖
 https://zhuanlan.zhihu.com/p/452999659
+
+2.3 Spark处理RDD，分区数和executor的关系
+https://blog.csdn.net/wx1528159409/article/details/102838531
