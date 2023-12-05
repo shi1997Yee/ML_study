@@ -16,4 +16,9 @@ https://zhuanlan.zhihu.com/p/452999659
 2.3 Spark处理RDD，分区数和executor的关系
 https://blog.csdn.net/wx1528159409/article/details/102838531
 一个Application -> 多个job ->一个job多个stage -> 一个stage多个task
+
+一个Application：一个程序
+一个job：一个action操作
+stage：遇到宽依赖就会划分stage
+task数=分区数
 针对每个stage，申请一定数量的executor，每个executor含有若干core(1-4个)，每个core处理一个task
