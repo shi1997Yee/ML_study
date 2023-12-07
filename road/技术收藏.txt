@@ -2,6 +2,7 @@
 https://www.zhihu.com/column/c_1389432385881194496
 
 弗雷彻距离(Frechet distance)-狗绳距离
+https://blog.51cto.com/u_16175524/7348540  # python简单实现
 https://blog.csdn.net/spatial_coder/article/details/127836835
 
 2、spark
@@ -19,6 +20,24 @@ https://blog.csdn.net/wx1528159409/article/details/102838531
 
 一个Application：一个程序
 一个job：一个action操作
-stage：遇到宽依赖就会划分stage
-task数=分区数
+stage：遇到宽依赖就会划分stage （两个stage之间就需要shuffle）
+task数=partition数
 针对每个stage，申请一定数量的executor，每个executor含有若干core(1-4个)，每个core处理一个task
+
+spark常见的action操作
+https://blog.csdn.net/a8131357leo/article/details/107010853
+
+2.4 shuffle
+一些常用的并且可能会触发shuffle操作的算子：distinct、groupByKey、reduceByKey、aggregateByKey、join、cogroup、repartition等
+
+2.5 spark调优
+如何判断并处理数据倾斜
+https://www.cnblogs.com/xiaodf/p/6055803.html#24
+基本调优，Spark作业基本运行原理
+https://www.cnblogs.com/xiaodf/p/6055563.html#22
+
+
+3、聚类
+3.1、KDTree
+https://zhuanlan.zhihu.com/p/402555908
+https://blog.csdn.net/weixin_39568744/article/details/90287787
