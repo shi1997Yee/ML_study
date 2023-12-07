@@ -1,7 +1,8 @@
 import numpy as np
 import math
-from shapely.geometry import Point, LineString
+from shapely.geometry import Point, LineString, GeometryCollection
 from shapely.wkt import loads
+from scipy import signal
 
 
 def angle_func1(point, angle, length):
@@ -75,10 +76,23 @@ def frechet_distance(P, Q):
     return memo[m - 1][n - 1]
 
 
+def smooth_linestring():
+    # 使用低通滤波器平滑曲线
+    link1 = LineString([[1, 1], [2, 2], [3, 5]])
+    ori_ls = LineString(link1['coordinates'])
+    x = np.array(ori_ls.coords)[:, 0]
+    y = np.array(ori_ls.coords)[:, 1]
+    b, a = signal.butter(2, 0.08, btype='lowpass')  # 低通滤波器
+    smoothed_y = signal.filtfilt(b, a, y, padlen=len(y) - 1)  # 应用滤波器
+    new_ls = LineString(list(zip(x, smoothed_y)))
+    print(new_ls.wkt)
+    GeometryCollection([ori_ls, new_ls])
+
+
 if __name__ == '__main__':
-    res = angle_func1(Point(1, 1), 45, 2) # LINESTRING (1 1, 2.414213562373095 2.414213562373095)
+    res = angle_func1(Point(1, 1), 45, 2)  # LINESTRING (1 1, 2.414213562373095 2.414213562373095)
     print(res)
-    res = angle_func2(Point(1, 1), Point(0, 0)) # -135.0
+    res = angle_func2(Point(1, 1), Point(0, 0))  # -135.0
     print(res)
 
 
