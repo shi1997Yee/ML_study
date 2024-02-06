@@ -2,6 +2,7 @@ import random
 from shapely.geometry import Point
 import math
 import random
+from sklearn.cluster import DBSCAN
 
 
 def metric_func(points, i):
