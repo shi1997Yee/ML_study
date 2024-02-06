@@ -41,3 +41,7 @@ https://www.cnblogs.com/xiaodf/p/6055563.html#22
 3.1、KDTree
 https://zhuanlan.zhihu.com/p/402555908
 https://blog.csdn.net/weixin_39568744/article/details/90287787
+
+4、统计
+4.1 方差，协方差cov，相关系数 含义及实现
+https://www.jianshu.com/p/cb90baf69736
