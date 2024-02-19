@@ -25,7 +25,7 @@ if __name__ == '__main__':
     points = [(0, 0), (0, 1), (1, 1), (0, 5)]
     cnts = len(points)
     theta = set([i for i in range(cnts)])  # 未被访问的
-    cluser = [-1 for i in range(cnts)]  # 类别
+    cluster = [-1 for i in range(cnts)]  # 类别
     # 1、找核心点
     for i in range(cnts):
         neibs = metric_func(points, i)
@@ -53,6 +53,6 @@ if __name__ == '__main__':
                 q_list.append(item)
                 theta.remove(item)
         for f in find:
-            cluser[f] = k
+            cluster[f] = k
 
-    print(cluser)
+    print(cluster)
